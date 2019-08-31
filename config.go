@@ -1,8 +1,8 @@
 package main
 
 import (
-	"fm/tui"
 	"github.com/nsf/termbox-go"
+	"github.com/pirmd/fm/tui"
 	"log"
 	"os"
 )

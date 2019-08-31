@@ -1,9 +1,9 @@
 package main
 
 import (
-	"fm/tui"
+	"github.com/dustin/go-humanize"
+	"github.com/pirmd/fm/tui"
 	"os"
-    "github.com/dustin/go-humanize"
 )
 
 // FmTUI implements a tui.TerminalUI adapted to browse a filesystem

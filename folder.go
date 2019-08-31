@@ -1,12 +1,11 @@
 package main
 
 import (
-	"fm/vfs"
+	"github.com/pirmd/fm/vfs"
 	"os"
 	"path/filepath"
 	"sort"
 )
-
 
 // Folder provides help to manipulate folders
 type Folder struct {
@@ -17,11 +16,11 @@ type Folder struct {
 	index int
 }
 
-// NewFolderFromURL returns a new Folder for the given url 
+// NewFolderFromURL returns a new Folder for the given url
 func NewFolderFromURL(rawURL string) *Folder {
 	fs, path, err := vfs.New(rawURL)
 	if err != nil {
-        return &Folder{err: err}
+		return &Folder{err: err}
 	}
 	return NewFolder(fs, path)
 }
@@ -69,7 +68,7 @@ func (f *Folder) SetWf(path string) {
 }
 
 // SortByName sorts a filelist first by folder then by name
-// TODO: does it worked if f.Ls is empty or if f is a nonexisting folder? 
+// TODO: does it worked if f.Ls is empty or if f is a nonexisting folder?
 func (f *Folder) SortByName() *Folder {
 	if f != nil {
 		sort.Slice(f.Ls, func(i, j int) bool {
