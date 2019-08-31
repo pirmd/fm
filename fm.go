@@ -23,7 +23,7 @@ func NewFileManager(ui *FmTUI) *FileManager {
 // Open initiates a browsing session.
 // Open takes an url as argument and recognize the protocol (scheme) supported by the vfs package
 func (f *FileManager) Open(url string) {
-    f.cd(NewFolderFromURL(url).SortByName())
+	f.cd(NewFolderFromURL(url).SortByName())
 }
 
 // cd changes the browing current location to a new Folder.
@@ -56,9 +56,9 @@ func (f *FileManager) OpenWorkingFile() {
 // on launchers like (xdg-open or Start.exe). Magic is done by go-open package
 func (f *FileManager) osopen(path string) {
 	if err := open.Run(path); err != nil {
-        // BUG: log to Sdterr (default config) does not play well with temrbox gui
-        // Cfg.Log.Println("Fail to open", path, ":", err)
-        fprintErr(f.ui.Info, err)
+		// BUG: log to Sdterr (default config) does not play well with temrbox gui
+		// Cfg.Log.Println("Fail to open", path, ":", err)
+		fprintErr(f.ui.Info, err)
 	}
 }
 

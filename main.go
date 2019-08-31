@@ -17,10 +17,10 @@ func main() {
 	defer UI.Close()
 
 	FM = NewFileManager(UI)
-    if len(os.Args) == 1 {
-        FM.Open(".")
-    } else {
-        FM.Open(os.Args[1])
+	if len(os.Args) == 1 {
+		FM.Open(".")
+	} else {
+		FM.Open(os.Args[1])
 	}
 
 	if err := UI.Run(); err != nil {
